@@ -1,5 +1,6 @@
 import pygame
 import Constants
+from sprites.BabyYoda import BabyYoda
 from sprites.Doge import Doge
 import Utility
 
@@ -9,6 +10,7 @@ class StarWarsDog:
     show_cut_scene = True
     all_game_rects = pygame.sprite.RenderUpdates()
     Doge.containers = all_game_rects
+    BabyYoda.containers = all_game_rects
 
     cut_scene_background = pygame .Surface(Constants.SCREEN_RECTANGLE.size)
 
@@ -36,14 +38,16 @@ class StarWarsDog:
 
     def do_shoot_out_scene(self, screen):
         doge = Doge(Constants.SCREEN_RECTANGLE)
+        babyYoda = BabyYoda(Constants.SCREEN_RECTANGLE)
+
         while True is True:
             pass
 
     def set_game_obj_images(self, screen):
         doge_image = Utility.load_image_transparent_background("doge-walk left1.png")
         Doge.images = [doge_image]
-
-
+        baby_yoda_image = Utility.load_image_transparent_background("baby yoda.png")
+        BabyYoda.images = [baby_yoda_image]
 
 
 if(__name__== "__main__"):
