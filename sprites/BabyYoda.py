@@ -21,7 +21,7 @@ class BabyYoda(pygame.sprite.Sprite):
 
         self.scale_images()
 
-        self.rect = self.image.get_rect(midright=(200, 100))
+        self.rect = self.image.get_rect(center=(200, 100))
 
     def scale_images(self):
         # image is too big. scale down

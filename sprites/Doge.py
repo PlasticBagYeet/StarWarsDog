@@ -24,4 +24,4 @@ class Doge(pygame.sprite.Sprite):
 
         # self.scale_
 
-        self.rect = self.image.get_rect(midright=(100, 100))
+        self.rect = self.image.get_rect(center=(100, 100))

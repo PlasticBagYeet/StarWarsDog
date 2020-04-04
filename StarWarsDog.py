@@ -8,6 +8,7 @@ import Utility
 
 class StarWarsDog:
     show_cut_scene = True
+    show_shoot_out_scene = True
     all_game_rects = pygame.sprite.RenderUpdates()
     Doge.containers = all_game_rects
     BabyYoda.containers = all_game_rects
@@ -40,8 +41,19 @@ class StarWarsDog:
         doge = Doge(Constants.SCREEN_RECTANGLE)
         babyYoda = BabyYoda(Constants.SCREEN_RECTANGLE)
 
-        while True is True:
-            pass
+        while self.show_shoot_out_scene is True:
+            # clear/erase the last drawn sprites
+            self.all_game_rects.clear(screen, self.cut_scene_background)
+
+            # update all the sprites.  call all Sprites' update()
+            self.all_game_rects.update()
+
+            # draw the scene
+            self.all_game_rects.draw(screen)
+            pygame.display.update()
+
+            # cap the framerate
+            # clock.tick(60)
 
     def set_game_obj_images(self, screen):
         doge_image = Utility.load_image_transparent_background("doge-walk left1.png")
